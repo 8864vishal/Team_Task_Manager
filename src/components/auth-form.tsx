@@ -37,20 +37,32 @@ export function AuthForm({ mode }: { mode: AuthMode }) {
   };
 
   return (
-    <form onSubmit={submit} className="space-y-4 rounded-xl border border-gray-200 bg-white p-6 shadow-sm">
-      <h1 className="text-2xl font-semibold text-gray-900">
+    <form
+      onSubmit={submit}
+      className="space-y-4 rounded-2xl border border-indigo-200/20 bg-slate-900/70 p-7 shadow-2xl shadow-indigo-950/50 backdrop-blur-md"
+    >
+      <h1 className="text-2xl font-semibold tracking-tight text-slate-100">
         {mode === "login" ? "Login" : "Create account"}
       </h1>
+      <p className="text-sm text-slate-300/80">
+        {mode === "login"
+          ? "Welcome back. Continue managing your team tasks."
+          : "Create your workspace account to start collaborating."}
+      </p>
       {mode === "signup" && (
         <>
           <input
             value={name}
             onChange={(e) => setName(e.target.value)}
             placeholder="Name"
-            className="w-full rounded-md border p-2"
+            className="w-full rounded-lg border border-slate-600/70 bg-slate-800/80 px-3 py-2.5 text-slate-100 placeholder:text-slate-400 outline-none transition focus:border-cyan-400 focus:ring-4 focus:ring-cyan-400/20"
             required
           />
-          <select value={role} onChange={(e) => setRole(e.target.value as "admin" | "member")} className="w-full rounded-md border p-2">
+          <select
+            value={role}
+            onChange={(e) => setRole(e.target.value as "admin" | "member")}
+            className="w-full rounded-lg border border-slate-600/70 bg-slate-800/80 px-3 py-2.5 text-slate-100 outline-none transition focus:border-cyan-400 focus:ring-4 focus:ring-cyan-400/20"
+          >
             <option value="member">Member</option>
             <option value="admin">Admin</option>
           </select>
@@ -61,7 +73,7 @@ export function AuthForm({ mode }: { mode: AuthMode }) {
         onChange={(e) => setEmail(e.target.value)}
         placeholder="Email"
         type="email"
-        className="w-full rounded-md border p-2"
+        className="w-full rounded-lg border border-slate-600/70 bg-slate-800/80 px-3 py-2.5 text-slate-100 placeholder:text-slate-400 outline-none transition focus:border-cyan-400 focus:ring-4 focus:ring-cyan-400/20"
         required
       />
       <input
@@ -69,11 +81,15 @@ export function AuthForm({ mode }: { mode: AuthMode }) {
         onChange={(e) => setPassword(e.target.value)}
         placeholder="Password"
         type="password"
-        className="w-full rounded-md border p-2"
+        className="w-full rounded-lg border border-slate-600/70 bg-slate-800/80 px-3 py-2.5 text-slate-100 placeholder:text-slate-400 outline-none transition focus:border-cyan-400 focus:ring-4 focus:ring-cyan-400/20"
         required
       />
       {error && <p className="text-sm text-red-600">{error}</p>}
-      <button type="submit" disabled={loading} className="w-full rounded-md bg-gray-900 px-4 py-2 text-white">
+      <button
+        type="submit"
+        disabled={loading}
+        className="w-full rounded-lg bg-gradient-to-r from-indigo-500 to-cyan-500 px-4 py-2.5 font-medium text-white transition hover:from-indigo-400 hover:to-cyan-400 disabled:cursor-not-allowed disabled:from-indigo-300 disabled:to-cyan-300"
+      >
         {loading ? "Please wait..." : mode === "login" ? "Login" : "Sign up"}
       </button>
     </form>
