@@ -162,12 +162,6 @@ API_DOCS.md
 
 ---
 
-## 📸 Screenshots (Optional)
-
-*Add your UI screenshots here to make it even more attractive*
-
----
-
 ## 🎯 Future Improvements
 
 * Notifications system 🔔
