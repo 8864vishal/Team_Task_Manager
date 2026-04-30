@@ -1,10 +1,42 @@
-# Team Task Manager
+# 🚀 Team Task Manager
 
-Production-ready full-stack task management app built with Next.js App Router, Tailwind CSS, MongoDB, and JWT authentication.
+A **production-ready full-stack task management application** built with modern technologies like **Next.js (App Router)**, **MongoDB**, and **JWT Authentication**.
 
-## 1) Folder Structure
+Designed to manage projects, assign tasks, and track progress with **role-based access control (Admin / Member)**.
 
-```text
+---
+
+## 🌐 Live Demo
+
+👉 http://teamtaskmanager-production-e09f.up.railway.app
+
+---
+
+## 🛠️ Tech Stack
+
+**Frontend**
+
+* Next.js (App Router)
+* Tailwind CSS
+
+**Backend**
+
+* Next.js API Routes
+* Node.js
+
+**Database**
+
+* MongoDB (Atlas)
+
+**Authentication**
+
+* JWT + bcrypt
+
+---
+
+## 📁 Project Structure
+
+```
 src/
   app/
     (auth)/
@@ -37,72 +69,120 @@ src/
     Task.ts
 ```
 
-## 2) Setup
+---
 
-1. Install dependencies:
+## ⚙️ Setup Instructions
 
-```bash
+### 1️⃣ Install Dependencies
+
+```
 npm install
 ```
 
-2. Create env file:
+### 2️⃣ Setup Environment Variables
 
-```bash
-cp .env.example .env.local
+Create `.env.local`:
+
+```
+MONGODB_URI=your_mongodb_uri
+MONGODB_DB_NAME=your_db_name
+JWT_SECRET=your_secret_key
 ```
 
-3. Fill required envs in `.env.local`:
-- `MONGODB_URI`
-- `MONGODB_DB_NAME`
-- `JWT_SECRET`
+---
 
-4. Start app:
+### 3️⃣ Run Locally
 
-```bash
+```
 npm run dev
 ```
 
-App runs at [http://localhost:3000](http://localhost:3000)
+👉 App runs on: http://localhost:3000
 
-## 3) Features Implemented
+---
 
-- JWT auth with secure bcrypt password hashing
-- Role-based access control (`admin`, `member`)
-- Project management (create/update/delete)
-- Team member project assignment APIs
-- Task management with status and deadlines
-- Overdue detection in dashboard summary + UI badge
-- Dashboard filters by status/project
-- Input validation using Zod
-- RESTful API design with proper status codes
+## ✨ Features
 
-## 4) Roles
+✅ Secure Authentication (JWT + bcrypt)
+✅ Role-Based Access Control (Admin / Member)
+✅ Project & Team Management
+✅ Task Assignment & Status Tracking
+✅ Dashboard with Filters (status/project)
+✅ Overdue Task Detection 🔴
+✅ Input Validation using Zod
+✅ RESTful APIs with proper status codes
 
-- **Admin**
-  - Manage users
-  - Create/manage projects
-  - Create/assign/edit/delete tasks
-- **Member**
-  - View assigned tasks
-  - Update task status for own tasks
+---
 
-## 5) API Documentation
+## 👥 User Roles
 
-See `API_DOCS.md` for full endpoint list and payload examples.
+### 🔹 Admin
 
-## 6) Deployment (Railway)
+* Manage users
+* Create & manage projects
+* Assign tasks
+* Full control over system
 
-1. Push repo to GitHub.
-2. Create a new Railway project and connect the repo.
-3. Add environment variables from `.env.example` in Railway Variables.
-4. Set build/start commands:
-   - Build: `npm run build`
-   - Start: `npm run start`
-5. Deploy.
+### 🔹 Member
 
-## 7) Production Notes
+* View assigned tasks
+* Update task status
 
-- Uses env variables for all secrets.
-- Works with `npm run build` and `npm run start`.
-- APIs enforce auth + role checks.
-- DB models include required relationships (`User`, `Project`, `Task`).
+---
+
+## 🔌 API Overview
+
+All APIs follow REST standards.
+
+📄 Full documentation available in:
+
+```
+API_DOCS.md
+```
+
+---
+
+## 🚀 Deployment (Railway)
+
+1. Push code to GitHub
+2. Create project on Railway
+3. Connect GitHub repo
+4. Add environment variables
+5. Deploy
+
+---
+
+## 🔐 Production Highlights
+
+* Environment-based configuration
+* Secure authentication handling
+* Scalable database design
+* Clean modular architecture
+* Ready for real-world usage
+
+---
+
+## 📸 Screenshots (Optional)
+
+*Add your UI screenshots here to make it even more attractive*
+
+---
+
+## 🎯 Future Improvements
+
+* Notifications system 🔔
+* Pagination & search optimization
+* Activity logs
+* UI/UX enhancements
+
+---
+
+## 👨‍💻 Author
+
+**Vishal Singhal**
+
+---
+
+## ⭐ If you like this project
+
+Give it a ⭐ on GitHub and share feedback!
